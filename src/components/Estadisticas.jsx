@@ -3,6 +3,13 @@ import styled from '@emotion/styled'
 
 
 const ContenedorEstadadisticas = styled.div`
+  position: absolute;
+  width: 80%;
+  height: 30%;
+  top: 21%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2rem;
   background-color: #032d29;
 `
 
@@ -10,23 +17,39 @@ const Parrafo = styled.p`
     font-weight: 600;
     font-size: 1.8rem;
     color: #aeba3a;
+    margin: 1rem;
+`
+
+const ParrafoStats = styled.p`
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: #aeba3a;
+    margin: 0;
 `
 
 const ContenedorTipo = styled.div`
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+`
+
+const ContenedorStats = styled.div`
+    display: flex;
+    justify-content: space-around;
 `
 
 const Span1 = styled.span`
     padding: 1rem;
     color: #FFF;
     background-color: #dcc46c;
-
-`
+    margin-left: 1rem;
+    `
 
 const Span2 = styled.span`
     padding: 1rem;
     color: #FFF;
     background-color: #8cbc82;
+    margin-left: 1rem;
 `
 
 const Span3 = styled.span`
@@ -36,17 +59,16 @@ const Span3 = styled.span`
 `
 
 const Estadistica = styled.div`
-    /* background-color: red; */
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: .5rem;
     align-items: center;
 `
 
 const Progress = styled.progress`
-    margin-top: 4rem;
+    margin-top: 1.5rem;
     padding: 2rem;
-    width: 10rem;
+    width: 5rem;
     accent-color: #267292;
     transform: rotate(-90deg);
 `
@@ -54,6 +76,7 @@ const Progress = styled.progress`
 
 const Estadisticas = ({pokemon}) => {
   return (
+    <>
     <ContenedorEstadadisticas>
         <ContenedorTipo>
 
@@ -77,14 +100,16 @@ const Estadisticas = ({pokemon}) => {
 
         </ContenedorTipo>
 
+
+        <ContenedorStats>
             <Estadistica>
                 <Progress
                     value={pokemon.hp.base_stat}
                     max="100"
                 />
-                <Parrafo>
+                <ParrafoStats>
                     PS
-                </Parrafo>
+                </ParrafoStats>
             </Estadistica>
             
             <Estadistica>
@@ -92,9 +117,9 @@ const Estadisticas = ({pokemon}) => {
                     value={pokemon.attack.base_stat}
                     max="100"
                 />
-                <Parrafo>
+                <ParrafoStats>
                     ATK
-                </Parrafo>
+                </ParrafoStats>
             </Estadistica>
 
             <Estadistica>
@@ -102,9 +127,9 @@ const Estadisticas = ({pokemon}) => {
                     value={pokemon.defense.base_stat}
                     max="100"
                 />
-                <Parrafo>
+                <ParrafoStats>
                     DEF
-                </Parrafo>
+                </ParrafoStats>
             </Estadistica>
 
             <Estadistica>
@@ -112,9 +137,9 @@ const Estadisticas = ({pokemon}) => {
                     value={pokemon.specialAttacke.base_stat}
                     max="100"
                 />
-                <Parrafo>
+                <ParrafoStats>
                     SP.ATK
-                </Parrafo>
+                </ParrafoStats>
             </Estadistica>
 
             <Estadistica>
@@ -122,9 +147,9 @@ const Estadisticas = ({pokemon}) => {
                     value={pokemon.specialDefense.base_stat}
                     max="100"
                 />
-                <Parrafo>
+                <ParrafoStats>
                     SP.DEF
-                </Parrafo>
+                </ParrafoStats>
             </Estadistica>
 
             <Estadistica>
@@ -132,23 +157,12 @@ const Estadisticas = ({pokemon}) => {
                     value={pokemon.speed.base_stat}
                     max="100"
                 />
-                <Parrafo>
+                <ParrafoStats>
                     SPEED
-                </Parrafo>
+                </ParrafoStats>
             </Estadistica>
 
-            <div>
-                <Parrafo>
-                    Altura: {pokemon.altura}M
-                </Parrafo>
-
-            </div>
-            <div>
-                <Parrafo>
-                        Peso: {pokemon.peso}Kg
-                </Parrafo>
-            </div>
-
+        </ContenedorStats>
 
         
 
@@ -156,6 +170,18 @@ const Estadisticas = ({pokemon}) => {
 
     </ContenedorEstadadisticas>
 
+    <div className='altura'>
+        <Parrafo>
+            Altura: {(pokemon.altura)/10}M
+        </Parrafo>
+
+    </div>
+    <div className='peso'>
+        <Parrafo>
+                Peso: {(pokemon.peso)/10}Kg
+        </Parrafo>
+    </div>
+    </>
   )
 }
 
