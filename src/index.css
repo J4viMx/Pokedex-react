@@ -16,6 +16,8 @@ body{
   justify-content: center;
   height: 100vh;
   background-image: url(img/pokemon-fondo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 header{
