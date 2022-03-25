@@ -44,7 +44,7 @@ header{
 
 
 .contenedor-pokedex{
-  background: linear-gradient(90deg, rgba(255,244,0,1) 0%, rgba(223,100,87,1) 47%, rgba(255,244,0,1) 100%);
+  background: transparent;
   padding: 1rem;
   width: 100rem;
   height: 80rem;
@@ -315,7 +315,7 @@ header{
   position: absolute;
   width: 70%;
   height: 20%;
-  background: linear-gradient(90deg, rgba(239,155,56,1) 0%, rgba(255,244,0,1) 100%);
+  background: #4375F8;
   right: 0;
   border-radius: 0 0 0 100%;
   border-bottom: 20px solid #921729;
@@ -326,7 +326,7 @@ header{
   width: 60%;
   height: 52%;
   right: 89%;
-  background: linear-gradient(90deg, rgba(232,102,88,1) 0%, rgba(242,171,47,1) 100%);
+  background: #4375F8;
   position: absolute;
   border-bottom: 10px solid #921729;
 }
